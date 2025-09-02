@@ -1,0 +1,35 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Hello World App
+  link(rel='stylesheet' href='/css/index.css')
+header
+  nav.navbar
+    .logo
+      | MW
+      span &amp; F
+    ul.nav-links
+      li
+        a(href='#') Home
+      li
+        a(href='form.html') Form
+      li
+        a(href='#about') About
+// Hero Section
+section.hero
+  .hero-content
+    h1
+      | Welcome to 
+      span Hello World App
+    p A simple Node.js application with style 
+    a.btn(href='form.html') Get Started
+// About Section
+section#about.about
+  h2 About This App
+  p
+    | This is a simple demo Node.js application.
+    | It includes a beautiful landing page and a form that sends data to the server.
+// Footer
+footer
+  p &copy; 2025 Hello World App | Built with &#x2764;&#xFE0F; &amp; Node.js

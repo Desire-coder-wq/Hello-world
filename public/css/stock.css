@@ -1,0 +1,75 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+form.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+form input {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #2980b9;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+button:hover { background-color: #1c5980; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.table th {
+  background-color: #2980b9;
+  color: white;
+}
+.table tbody tr:hover {
+  background-color: #f1f9ff;
+}
+.table button {
+  padding: 0.3rem 0.6rem;
+  margin: 0 0.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.editBtn { background-color: #f39c12; color: white; }
+.deleteBtn { background-color: #e74c3c; color: white; }
