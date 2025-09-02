@@ -13,12 +13,12 @@ head
     h2 User Registration
     form#registerForm(action='/submit' method='POST')
       label(for='name') Full Name
-      input#name(type='text' placeholder='Enter full name' required='')
+      input#name(type='text' name='Name' placeholder='Enter full name' required='')
       label(for='email') Email
-      input#email(type='email' placeholder='Enter email' required='')
+      input#email(type='email' name='Email' placeholder='Enter email' required='')
       label(for='password') Password
       .password-wrapper
-        input#password(type='password' placeholder='Enter password' required='')
+        input#password(type='password' name='Password' placeholder='Enter password' required='')
         span.toggle-password(onclick='togglePassword()') &#x1F441;
       label(for='role') Role
       select#role(required='')
