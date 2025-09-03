@@ -4,15 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MWF — Stock Management</title>
-  <link rel="stylesheet" href="/css/stock.css" />
+  <link rel="stylesheet" href="/public/css/stock.css" />
 </head>
 <body>
+   <nav class="topnav">
+      <ul>
+        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li><a href="sales-entry.html">🧾 Sales Entry</a></li>
+        <li><a href="receipt.html">🧾 Receipt</a></li>
+        <li><a href="sales-report.html" class="active">📊 Sales Report</a></li>
+        <li><a href="stock-report.html">📋 Stock Report</a></li>
+        <li><a href="index.html" class="logout-btn">🚪 Logout</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." aria-label="Search" />
+      <button type="submit">🔍</button>
+    </div>
 <header id="topbar"></header>
 <main class="container">
   <h1>Stock Management</h1>
 
   <!-- Add / Edit Form -->
-  <form id="stockForm" class="grid">
+  <form id="stockForm" class="grid" action='/submit' method="POST">
     <input type="hidden" name="id" id="stockId" />
     <label>Product Name<input name="name" id="name" required /></label>
     <label>Quantity<input type="number" name="quantity" id="quantity" min="0" required /></label>

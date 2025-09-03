@@ -2,30 +2,21 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Furniture Company - User Registration
+  title Furniture Company-Login
   link(rel='stylesheet' href='/css/register.css')
 .container
-  // Left side: Image
   .image-section
     img(src='/images/background.jpeg' alt='Furniture Company')
-  // Right side: Form
   .form-section
-    h2 User Registration
-    form#registerForm(action='/register' method='POST')
-      label(for='name') Full Name
-      input#name(type='text' name='Name' placeholder='Enter full name' required='')
+    h2 Login
+    form#registerForm(action='/login' method='POST')
       label(for='email') Email
       input#email(type='email' name='Email' placeholder='Enter email' required='')
       label(for='password') Password
       .password-wrapper
         input#password(type='password' name='Password' placeholder='Enter password' required='')
         span.toggle-password(onclick='togglePassword()') &#x1F441;
-      label(for='role') Role
-      select#role(required='')
-        option(value='') -- Select Role --
-        option(value='Admin') Admin
-        option(value='Manager') Manager
-        option(value='Attendant') Attendant
-      button(type='submit') Register
+      
+      button(type='submit') login
       p#error-message
 script(src='resgister.js')

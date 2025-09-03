@@ -13,6 +13,32 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border-radius: 8px;
 }
+  /* Navigation menu */
+  .topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .topnav ul li {
+    margin: 0 15px;
+  }
+
+  .topnav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .topnav ul li a:hover,
+  .topnav ul li a.active {
+    color: #04aa6d;
+    border-bottom: 2px solid #04aa6d;
+    padding-bottom: 2px;
+  }
+
+
 h1 {
   text-align: center;
   color: #2c3e50;

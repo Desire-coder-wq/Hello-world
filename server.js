@@ -5,6 +5,8 @@ const path = require('path');
 //Import routes
 const classRoutes = require("./routes/classRoutes");
 const authRoutes = require("./routes/authRoutes");
+const stockRoutes = require("./routes/stockRoutes");
+const indexRoutes = require("./routes/indexRoutes");
 // 2.//Instantiations
 const app = express();
 
@@ -31,7 +33,7 @@ app.use(express.urlencoded({extended:true})) // helps to pass data from forms
 // 5.//Routes
  app.use('/',classRoutes);
  app.use('/',authRoutes);
-
+ app.use('/',stockRoutes);
 
 
 
