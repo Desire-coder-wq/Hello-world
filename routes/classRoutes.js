@@ -7,9 +7,9 @@ const path = require("path");
 // app.use((req, res, next) => {
 //    console.log("A new request received at " + Date.now());
 
-//    // This function call tells that more processing is
-//    // required for the current request and is in the next middleware
-//   //  function/route handler.
+   // This function call tells that more processing is
+   // required for the current request and is in the next middleware
+  //  function/route handler.
 //    next();  
 // });
 
@@ -25,7 +25,7 @@ router.get('/home', (req, res) => {
 //   res.send("this is my lovely page")
 // }
 // );
-
+//TODO this functio
 router.get('/about', (req, res) => { 
   res.send("This is my lovely page ");
 });
@@ -50,9 +50,9 @@ router.get('/users', (req,res) =>{
  
 
 //serving html files
-router.get('/', (req, res) => { 
-  res.sendFile(__dirname + '/html/index.html');
-});
+// router.get('/', (req, res) => { 
+//   res.sendFile(__dirname + '/html/index.html');
+// });
 
 //serving html files
 //be able to get the form
@@ -72,12 +72,12 @@ router.post('/register1', (req, res) => {
   console.log(req.body)
 });
 
-router.get('/update-stock', (req, res) => { 
-  res.sendFile(__dirname + '/html/stock.html');
-});
-router.post('/update-stock', (req, res) => { 
-  console.log(req.body)
-});
+// router.get('/update-stock', (req, res) => { 
+//   res.sendFile(__dirname + '/html/stock.html');
+// });
+// router.post('/update-stock', (req, res) => { 
+//   console.log(req.body)
+// });
 
 
 //post route

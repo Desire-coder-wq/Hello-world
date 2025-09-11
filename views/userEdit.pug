@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Edit User
+  body
+    h1 Edit User
+    form(action=`/users/update/${user._id}`, method="POST")
+      label(for="name") Name:
+      input(type="text", name="name", value=user.name)
+
+      label(for="email") Email:
+      input(type="email", name="email", value=user.email)
+
+      label(for="role") Role:
+      select(name="role")
+        option(value="manager" selected=(user.role==="manager")) Manager
+        option(value="staff" selected=(user.role==="attendant")) Attendant
+
+      button(type="submit") Save Changes

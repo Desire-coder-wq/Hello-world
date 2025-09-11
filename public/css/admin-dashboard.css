@@ -1,0 +1,181 @@
+body{
+       background: linear-gradient(135deg, rgb(228, 216, 199), rgb(232, 176, 103));
+}
+/* Whole navbar background */
+.navbar {
+  background-color: rgb(226, 232, 232) !important;  /* override Bootstrap default */
+  padding: 10px;
+}
+
+/* Collapse background */
+#navbarNav {
+  background-color: rgba(0, 0, 128, 0.452); /* semi-transparent navy */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Brand */
+.navbar-brand {
+  color: powderblue !important;
+  background-color: antiquewhite;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Navbar links */
+.nav-link {
+  color: black !important; /* default link text */
+  transition: 0.3s ease;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+/* Hover + focus */
+.nav-link:hover,
+.nav-link:focus {
+  color: white !important;
+  background-color: salmon !important;
+}
+
+/* Active link */
+.nav-link.active {
+  color: white !important;
+  background-color: salmon !important;
+}
+
+/* Navbar layout */
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Toggler (hamburger menu) */
+.navbar-toggler {
+  border-color: black;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+    /* Space below fixed navbar */
+    body {
+      margin-top: 70px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    /* Main container layout */
+    .container {
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto 40px auto;
+      gap: 40px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Image section styles */
+    .image-section {
+      flex: 1;
+      max-width: 400px;
+      align-self: flex-start;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .image-section img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Form section styles */
+    .form-section {
+      flex: 1.2;
+      background-color: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .form-section h2 {
+      margin-bottom: 24px;
+      color: #2a4058;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    form input, form select, form button {
+      width: 100%;
+      margin-bottom: 18px;
+      padding: 12px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1.8px solid #cbd5e1;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+    form input:focus, form select:focus {
+      border-color: #357edd;
+      outline: none;
+    }
+    form button {
+      background-color: #357edd;
+      border: none;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #285ec4;
+    }
+    .password-wrapper {
+      position: relative;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Settings forms side by side */
+    .settings-container {
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      gap: 40px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .settings-section {
+      flex: 1;
+      background-color: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .settings-section h2 {
+      margin-bottom: 20px;
+      color: #2a4058;
+      border-bottom: 2px solid #357edd;
+      padding-bottom: 6px;
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 900px) {
+      .container, .settings-container {
+        flex-direction: column;
+      }
+      .image-section, .form-section, .settings-section {
+        max-width: 100%;
+      }
+    }

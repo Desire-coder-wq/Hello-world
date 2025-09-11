@@ -1,26 +1,41 @@
-extends layout 
-block content
-main.container
-  h1 Stock Management
-  // Add / Edit Form
-  form#stockForm.grid(action='/stock' method='POST')
-    input#stockId(type='hidden' name='id')
-    label
-      | Product Name
-      input#name(name='name' required='')
-    label
-      | Quantity
-      input#quantity(type='number' name='quantity' min='0' required='')
-    label
-      | Unit Price
-      input#price(type='number' name='price' min='0' required='')
-    button(type='submit') Save Item
-  // Table
-  table#stockTable.table
-script(src='js/assets/js/auth.js')
-script(src='js/ui.js')
-script(src='js/stock.js')
-script.
-  requireAuth();
-  renderTopbar('Stock Management');
-  renderStock();
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title MWF — Stock Management
+    link(rel="stylesheet", href="/css/stock.css")
+  body
+    nav.topnav
+      ul
+        li: a(href="/dashboard") 🏠 Dashboard
+        li: a(href="/sales") 🧾 Sales Entry
+        li: a(href="/receipt") 🧾 Receipt
+        li: a(href="/sales-report") 📊 Sales Report
+        li: a(href="/stock-report") 📋 Stock Report
+        li: a(href="/stock-list") 📦 Stock List
+        li: a(href="/logout", class="logout-btn") 🚪 Logout
+
+    header#topbar
+    main.container
+      h1 Stock Management
+
+      form#stockForm.grid(action=stock ? `/stock/${stock._id}?_method=PUT` : "/stock", method="POST")
+        if stock
+          input(type="hidden", name="id", value=stock._id)
+        label
+          | Product Name
+          input#name(type="text", name="name", required, value=stock ? stock.name : "")
+        label
+          | Quantity
+          input#quantity(type="number", name="quantity", min="0", required, value=stock ? stock.quantity : "")
+        label
+          | Unit Price
+          input#price(type="number", name="price", min="0", required, value=stock ? stock.price : "")
+        button(type="submit") Save Item
+
+    script(src="/js/assets/js/auth.js")
+    script(src="/js/ui.js")
+    script.
+      requireAuth();
+      renderTopbar("Stock Management");

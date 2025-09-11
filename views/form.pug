@@ -4,6 +4,22 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Submit Form
   link(rel='stylesheet' href='css/form.css')
+  nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        a.navbar-brand(href='#') FORMS
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto
+            li.nav-item
+              a.nav-link(href='/index') Home
+            li.nav-item
+              a.nav-link(href='/register') register
+            li.nav-item
+              a.nav-link(href='/login') login
+            li.nav-item
+              a.nav-link(href='/stock') stock
+
 .container
   h1 Submit Your Info
   form(action='/submit' method='POST')

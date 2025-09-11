@@ -1,0 +1,156 @@
+/* General styles */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f2f6fc;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Form */
+form#salesForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  margin-bottom: 30px;
+}
+
+form#salesForm label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+}
+
+form#salesForm input,
+form#salesForm select {
+  margin-top: 6px;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+form#salesForm input:focus,
+form#salesForm select:focus {
+  border: 1px solid #007bff;
+  outline: none;
+}
+
+/* Full-width button */
+form#salesForm button {
+  grid-column: span 2;
+  padding: 12px;
+  background: #28a745;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s ease-in-out;
+}
+.container {
+  max-width: 1000px; /* give a bit more space */
+}
+
+#salesTable {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+form#salesForm button:hover {
+  background: #218838;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background: #007bff;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Action buttons inside table */
+button.edit {
+  background: #007bff;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.25s;
+  margin-right: 5px;
+}
+
+button.edit:hover {
+  background: #0056b3;
+}
+
+button.delete {
+  background: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+button.delete:hover {
+  background: #a71d2a;
+}
+
+/* Responsive: form becomes single-column on small screens */
+@media (max-width: 600px) {
+  form#salesForm {
+    grid-template-columns: 1fr;
+  }
+
+  form#salesForm button {
+    grid-column: span 1;
+  }
+}

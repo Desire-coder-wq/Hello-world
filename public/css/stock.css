@@ -5,6 +5,64 @@ body {
   padding: 0;
   color: #333;
 }
+/* Whole navbar background */
+.topnav {
+  background-color: rgb(20, 161, 161) !important; /* override Bootstrap default */
+  padding: 10px;
+}
+
+/* Collapse background */
+#navbarNav {
+  background-color: rgba(0, 0, 128, 0.452); /* semi-transparent navy */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Brand */
+.navbar-brand {
+  color: powderblue !important;
+  background-color: rgb(161, 103, 26);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Navbar links */
+.nav-link {
+  color: black !important; /* default link text */
+  transition: 0.3s ease;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+/* Hover + focus */
+.nav-link:hover,
+.nav-link:focus {
+  color: white !important;
+  background-color: salmon !important;
+}
+
+/* Active link */
+.nav-link.active {
+  color: white !important;
+  background-color: salmon !important;
+}
+
+/* Navbar layout */
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Toggler (hamburger menu) */
+.navbar-toggler {
+  border-color: black;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 .container {
   max-width: 1000px;
   margin: 2rem auto;
