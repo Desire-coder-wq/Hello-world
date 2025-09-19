@@ -81,7 +81,7 @@
 }
 
 .hero-content h1 span {
-  color: #ffd700;
+  color:rgb(5, 118, 5);
 }
 
 .hero-content p {
@@ -100,7 +100,7 @@
 }
 
 .btn:hover {
-  background: #ffd700;
+  background:rgb(7, 150, 7);
   color: #333;
 }
 

@@ -71,31 +71,30 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border-radius: 8px;
 }
-  /* Navigation menu */
-  .topnav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
+/* Navigation menu */
+.topnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-  .topnav ul li {
-    margin: 0 15px;
-  }
+.topnav ul li {
+  margin: 0 15px;
+}
 
-  .topnav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-  }
+.topnav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-  .topnav ul li a:hover,
-  .topnav ul li a.active {
-    color: #04aa6d;
-    border-bottom: 2px solid #04aa6d;
-    padding-bottom: 2px;
-  }
-
+.topnav ul li a:hover,
+.topnav ul li a.active {
+  color: #04aa6d;
+  border-bottom: 2px solid #04aa6d;
+  padding-bottom: 2px;
+}
 
 h1 {
   text-align: center;
@@ -113,12 +112,18 @@ form label {
   flex-direction: column;
   font-weight: 600;
 }
-form input {
+/* ✅ Equal styling for input & select */
+form input,
+form select {
   margin-top: 0.3rem;
-  padding: 0.4rem 0.6rem;
+  padding: 0.6rem 0.8rem;   /* same padding → same height */
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 14px;
+  width: 100%;              /* ensures full width */
+  box-sizing: border-box;   /* padding doesn’t expand box size */
 }
+
 button {
   padding: 0.6rem 1.2rem;
   background-color: #2980b9;

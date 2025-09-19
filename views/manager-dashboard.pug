@@ -1,0 +1,90 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Manager Dashboard - MWF
+link(rel="stylesheet", href="/css/manager.css")
+//  Wrapper for sidebar + main 
+.layout
+  //  Sidebar 
+  aside.sidebar
+    h2.logo Dashboard
+    nav
+      ul
+        li
+          a(href="/stock-report") Reports
+        li
+          a(href="/sales-list") Sales List
+        li
+          a(href="/approve-stock") Approve Stock
+        li
+          a(href="/stockList") StockList
+        li
+          a(href="/sales-report") Sales Reports
+        li
+          a(href="/attendants") Attendants
+        li
+          a#editProfileBtn(href="#") Profile
+        li
+          a(href="/logout") Logout
+  //  Main content 
+  main.main-content
+    header
+      .header-profile
+        img#headerProfilePic(src="/images/default-profile.png", alt="Profile Picture")
+        h1
+          | Welcome, 
+          span#managerName Manager
+    //  Cards 
+    section.cards
+      .card(onclick="location.href='/stock-report'")
+        h3 Stock Report
+        p View stock
+      .card(onclick="location.href='/stockList'")
+        h3 StockList
+        p View stock
+      .card(onclick="location.href='/stockList'")
+        h3 Approve Stock
+        p Approve stock submitted by attendants.
+      .card(onclick="location.href='/sales-list'")
+        h3 Sales List
+        p Edit or delete a sale
+      .card(onclick="location.href='/sales-report'")
+        h3 Sales Report
+        p View periodical sales reports.
+      .card(onclick="location.href='/products'")
+        h3 Finished Furniture
+        p View finished products available for sale.
+      .card(onclick="location.href='/attendants-monitor'")
+        h3 Attendants
+        p View attendants and monitor tasks.
+      .card#profileCard
+        h3 Profile
+        p Update your account details.
+      .card(onclick="location.href='/logout'")
+        h3 Logout
+        p Sign out from the system.
+//  Profile Modal 
+.modal#profileModal
+  .modal-content
+    span.close#closeModal 
+    h2 Edit Profile
+    form#profileForm(action="/profile", method="POST", enctype="multipart/form-data")
+      //  Profile Picture Section 
+      .profile-section
+        .profile-pic-wrapper
+          img#profilePreview(src="/images/default-profile.png", alt="Profile Picture")
+          input#profilePicInput(type="file", name="profilePic", accept="image/*")
+          .profile-actions
+            button#changePicBtn(type="button") Change
+            button#deletePicBtn(type="button") Delete
+      //  Info Section 
+      .info-section
+        label Name:
+        input#nameInput(type="text", name="name", value="Manager Name", required)
+        label Email:
+        input#emailInput(type="email", name="email", value="manager@example.com", required)
+      button.save-btn(type="submit") Save
+//  Footer 
+footer
+  .container
+    p © 2025 Mayondo Wood & Furniture Ltd
+script(src="/js/management.js")

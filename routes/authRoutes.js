@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport")
 const UserModel = require("../models/userModel");
 const { Passport } = require('passport');
-const userModel = require('../models/userModel');
+
 
 
 //getting the register form 
@@ -15,12 +15,11 @@ router.post('/register', async (req, res) => {
   try {
   const user = new UserModel(req.body);
    console.log(req.body);
-  let existingUser = await UserModel.findOne({Email:req.body.Email});
+  let existingUser = await UserModel.findOne({email:req.body.email});
   if (existingUser){
-    return res.status(400).send("Wrong Email")
+    return res.status(400).send("Email already exists")
   }else{
-  const user = new UserModel(req.body);
-    await UserModel.register(user,req.body.password,(error)=>{
+     UserModel.register(user,req.body.password,(error)=>{
       if (error){
         throw error;
       }
@@ -29,7 +28,8 @@ router.post('/register', async (req, res) => {
   }
 
   } catch (error) {
-    res.status(400).send("Oops something went wrong")
+    console.error(error);
+    res.status(400).send("Oops something went wrong");
   }
 });
 
@@ -48,8 +48,8 @@ router.post(
 
     req.session.user = req.user;
 
-    if (req.user.role === "Manager") {
-      res.redirect("/admin-dashboard");
+    if (req.user.role === "manager") {
+      res.redirect("/manager-dashboard");
     } else if (req.user.role === "Attendant") {
       res.redirect("/sales");
     } else {
@@ -62,7 +62,7 @@ router.post(
 // GET: Show all users from MongoDB
 router.get("/userlist", async (req, res) => {
   try {
-    const users = await userModel.find().lean(); // query MongoDB
+    const users = await UserModel.find().lean(); // query MongoDB
     res.render("userList", { user: users }); // pass users to Pug
   } catch (err) {
     console.error("Error fetching users:", err);
@@ -71,9 +71,9 @@ router.get("/userlist", async (req, res) => {
 })
 
 // DELETE: Remove user from MongoDB
-router.post("/users/delete/:id", async (req, res) => {
+router.post("/users/:id", async (req, res) => {
   try {
-    await User.findByIdAndDelete(req.params.id);
+    await UserModel.findByIdAndDelete(req.params.id);
     res.redirect("/userList"); // make sure this matches your pug route
   } catch (err) {
     console.error("Error deleting user:", err);
@@ -82,7 +82,7 @@ router.post("/users/delete/:id", async (req, res) => {
 });
 
 router.get("/user-edit/:id", async (req, res) => {
-  const user = await User.findById(req.params.id);
+  const user = await UserModel.findById(req.params.id);
   res.render("userEdit", { user });
 });
 
@@ -91,7 +91,7 @@ router.post("/users/update/:id", async (req, res) => {
   try {
     const { name, email, role } = req.body;
 
-    await User.findByIdAndUpdate(req.params.id, {
+    await UserModel.findByIdAndUpdate(req.params.id, {
       name,
       email,
       role,
@@ -129,13 +129,6 @@ router.post('/form', (req, res) => {
 
 
 
-router.get('/admin-dashboard', (req, res) => { 
-  res.render("admin-dashboard",{title:"admin-dashboard page"})
-});
-router.post('/admin-dashboard', (req, res) => { 
-  console.log(req.body)
-  res.redirect("/sales-entry")
-});
 
 
 

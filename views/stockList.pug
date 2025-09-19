@@ -8,23 +8,25 @@ html(lang="en")
   body
     nav.topnav
       ul
-        li: a(href="/dashboard") 🏠 Dashboard
-        li: a(href="/sales-entry") 🧾 Sales Entry
-        li: a(href="/receipt") 🧾 Receipt
-        li: a(href="/sales-report") 📊 Sales Report
-        li: a(href="/stock-report") 📋 Stock Report
-        li: a(href="/stock-list", class="active") 📦 Stock List
-        li: a(href="/logout", class="logout-btn") 🚪 Logout
+        li: a(href="/dashboard")  Dashboard
+        li: a(href="/sales-entry")  Sales Entry
+        li: a(href="/receipt")  Receipt
+        li: a(href="/sales-report") Sales Report
+        li: a(href="/stock-report")  Stock Report
+        li: a(href="/stock-list", class="active")  Stock List
+        li: a(href="/logout", class="logout-btn") Logout
 
     header#topbar
     main.container
-      h1 📦 Stock List
+      h1  Stock List
 
       table#stockTable.table
         thead
           tr
             th #
             th Product Name
+            th Product Type
+            th Category 
             th Quantity
             th Unit Price
             th Total Value
@@ -34,7 +36,9 @@ html(lang="en")
             each item, i in stock
               tr
                 td #{i + 1}
-                td #{item.name}
+                td #{item.productName}
+                td #{item.productType}
+                td #{item.category}
                 td #{item.quantity}
                 td #{item.price}
                 td #{item.quantity * item.price}

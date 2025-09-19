@@ -1,156 +1,164 @@
-/* General styles */
+/* Reset some default spacing */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f2f6fc;
+  font-family: Arial, sans-serif;
   margin: 0;
+  background: linear-gradient(135deg, rgb(228, 216, 199), rgb(232, 176, 103));
+}
+
+/* Layout container (sidebar + main content) */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: nowrap;
+}
+
+
+
+/* ===== Main content ===== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  color: #333;
+  background: linear-gradient(135deg, rgb(228, 216, 199), rgb(232, 176, 103));
 }
 
-/* Container */
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Headings */
-h1, h2 {
+header {
   text-align: center;
-  color: #222;
   margin-bottom: 20px;
 }
 
-/* Form */
-form#salesForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px 20px;
-  margin-bottom: 30px;
+h1 {
+  color: #2c3e50;
+  font-size: 1.8rem;
 }
 
-form#salesForm label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
-  font-size: 14px;
-  color: #444;
-}
-
-form#salesForm input,
-form#salesForm select {
-  margin-top: 6px;
-  padding: 9px 12px;
-  border: 1px solid #ccc;
+/* ===== Form Styling (Smaller & Compact) ===== */
+form {
+  max-width: 600px;   /* smaller width */
+  margin: 0 auto;
+  padding: 15px;      /* less padding */
+  background: #fff;
   border-radius: 6px;
-  font-size: 14px;
-  transition: border 0.2s;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  font-size: 0.85rem; /* smaller text inside form */
 }
 
-form#salesForm input:focus,
-form#salesForm select:focus {
-  border: 1px solid #007bff;
-  outline: none;
-}
-
-/* Full-width button */
-form#salesForm button {
-  grid-column: span 2;
-  padding: 12px;
-  background: #28a745;
-  border: none;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.25s ease-in-out;
-}
-.container {
-  max-width: 1000px; /* give a bit more space */
-}
-
-#salesTable {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-form#salesForm button:hover {
-  background: #218838;
-}
-
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background: #fafafa;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 12px;
+fieldset {
   border: 1px solid #ddd;
+  padding: 10px;     /* less padding */
+  margin-bottom: 12px;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 6px;      /* smaller padding */
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 0.85rem; /* smaller text */
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #2c3e50;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 12px;
+  border: none;
+  font-size: 0.9rem;  /* smaller button text */
+  padding: 8px;       /* smaller button */
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #1a242f;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: auto;
+  background: linear-gradient(135deg, rgb(7, 115, 7), rgb(10, 123, 10));
+  color: #ff7200;
   text-align: center;
-  font-size: 14px;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }
 
-th {
-  background: #007bff;
-  color: white;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-}
-
-tr:nth-child(even) {
-  background: #f9f9f9;
-}
-
-/* Action buttons inside table */
-button.edit {
-  background: #007bff;
-  color: white;
-  padding: 6px 12px;
-  font-size: 13px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.25s;
-  margin-right: 5px;
-}
-
-button.edit:hover {
-  background: #0056b3;
-}
-
-button.delete {
-  background: #dc3545;
-  color: white;
-  padding: 6px 12px;
-  font-size: 13px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.25s;
-}
-
-button.delete:hover {
-  background: #a71d2a;
-}
-
-/* Responsive: form becomes single-column on small screens */
-@media (max-width: 600px) {
-  form#salesForm {
-    grid-template-columns: 1fr;
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
   }
 
-  form#salesForm button {
-    grid-column: span 1;
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .sidebar ul li {
+    margin: 5px 0;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  form {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+
+  input, select, textarea, button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }

@@ -40,8 +40,8 @@ html(lang="en")
                 td
                   a(href=`/user-edit/${item._id}`) Edit
                   form(
-                    action=`/users/delete/${item._id}`,
-                    method="POST",
+                    action=`/users/${item._id}?_method="DELETE"`,
+                    method="POST" ,
                     style="display:inline",
                     onsubmit="return confirmDelete()"
                   )
